@@ -55,7 +55,7 @@ case $host_os in
       ;;
   *mingw*|*msys*|*linux*)
         AC_MSG_RESULT([${host_os}])
-        LDFLAGS+=" -no-undefined -lpthread"
+        LDFLAGS+=" -no-undefined -lpthread $($CC -print-libgcc-file-name)"
         AC_SUBST([extra_lib_flags], ["-no-undefined -lpthread"])
         ;;
 esac
